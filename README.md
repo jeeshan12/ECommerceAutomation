@@ -60,7 +60,7 @@ Protractor is used to write e2e automated tests. It uses Jasmine to proovide a B
 Three user journey has been automated which are given below
 * **Search and Order a product**
 * **Register a new user to application**
-* **Contact custmer care on product queries**
+* **Contact customer care on product queries**
 
 
 ## Running Tests
