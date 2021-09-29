@@ -46,7 +46,7 @@ npm install
 Protractor is used to write e2e automated tests. It uses Jasmine to proovide a BDD way of writing tests and assertions. Faker is being used to generate lot of random test data. JSON's are also used to store tests specific test data which are static like success messages, header labels on certain pages etc.
 
 **Protractor Architecture for running tests**
-![](https://github.com/jeeshan12/springboot-updatepassword/blob/main/screenshots/dockercomposeup.png)
+![](https://github.com/jeeshan12/ECommerceAutomation/blob/main/framework_screenshots/ProtractorArchitecture.png)
 
 ### Framework Folder Structure
 **Page Object Model** is used to introduce reusability of the functionalities across the application. Sometimes Page classes can become very large and difficult to maintain. This drawback is improved by introducing Page components in the framework which can later be added to the appropriate pages to introduce single responsibility among the classes. If a particular component is being used across the classes then composition is also used to make that resuable component available to different class.
@@ -54,6 +54,7 @@ Protractor is used to write e2e automated tests. It uses Jasmine to proovide a B
 **Resuable Utils** are handled using separate js files under utils folder.
 **Waits** are handled using Expected Conditions.
 **Specs** are written using Jasmine under **tests** folders.
+![](https://github.com/jeeshan12/ECommerceAutomation/blob/main/framework_screenshots/Framework_structure.png)
 
 ### Automated Scenarios
 Three user journey has been automated which are given below
@@ -77,15 +78,18 @@ To run tests parallel on headful mode
 ```
 npm run e2e  -- --capabilities.shardTestFiles=true
 ```
+![](https://github.com/jeeshan12/ECommerceAutomation/blob/main/framework_screenshots/ExecutionParallel_local.png)
 To run tests parallel on headless mode
 ```
 npm run e2e -- --capabilities.shardTestFiles=true --capabilities.chromeOptions.args="headless"
 ```
-![](https://github.com/jeeshan12/springboot-updatepassword/blob/main/screenshots/mocktests.png)
+![](https://github.com/jeeshan12/ECommerceAutomation/blob/main/framework_screenshots/Execution_local_headless.png)
 ### Ruunning a single test
 If you want to run only one spec file, you can make `describe` or `it` block as `fdescribe` or `fit` .
 ### Running Through IDE
 You can also execute the tests through VS Code. You can use the above commands to run in VS Code integrated terminal. Press **Ctrl+~** to open integrated terminal in IDE.
+
+
 
 ## Dockerized Tests
 
@@ -96,15 +100,15 @@ docker build -t <<imagename>> .
 ```
 <<imagename>> can be anything . Preferred way is to use `yourdockerid/application_name` e.g.`jeeshan12/beamery_automation`
 You will get something similar to this in console once image is built successfully
-![](https://github.com/jeeshan12/springboot-updatepassword/blob/main/screenshots/dockerbuild.png)
+![](https://github.com/jeeshan12/ECommerceAutomation/blob/main/framework_screenshots/DockerImage.png)
 * Now Run the `Protractor Tests` by running below command
 ```
  docker run --rm <<imagename>> run e2e -- --capabilities.shardTestFiles=true --capabilities.chromeOptions.args="headless" --capabilities.chromeOptions.args="no-sandbox" --capabilities.chromeOptions.args="disable-dev-shm-usage"
 
 ```
  You will get something similar in console while the execution is happening
-![](https://github.com/jeeshan12/springboot-updatepassword/blob/main/screenshots/dockercomposeup.png)
+![](https://github.com/jeeshan12/ECommerceAutomation/blob/main/framework_screenshots/DockerExecution.png)
 
 ## Issues Faced
 Application used for automation causes `Resource Limit Exceeded` message. One reason would be that it is practice site and will not be able to handle multiple subsequent requests. If you are getting below error, I would recomend to please wait for sometimes before doing next iteration of execution or try to execute the tests in docker container. I have noticed that i am not getting that `Resource Limit Exceeded` message in docker containers very frequently.
-![](https://github.com/jeeshan12/springboot-updatepassword/blob/main/screenshots/dockercomposeup.png)
+![](https://github.com/jeeshan12/ECommerceAutomation/blob/main/framework_screenshots/Issues_faced.png)
