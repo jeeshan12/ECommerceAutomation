@@ -1,0 +1,21 @@
+{
+  "name": "beamery_automation",
+  "version": "1.0.0",
+  "description": "Beamery Automation",
+  "main": "index.js",
+  "scripts": {
+    "pree2e": "cd ./node_modules/protractor && npm i webdriver-manager@latest && cd ../.. && ./node_modules/.bin/webdriver-manager update --gecko=false",
+    "e2e": "protractor protractor.conf.js"
+  },
+  "author": "mjeeshan",
+  "license": "ISC",
+  "devDependencies": {
+    "faker": "^5.5.3",
+    "fs": "0.0.1-security",
+    "jasmine-data-provider": "^2.2.0",
+    "jasmine-spec-reporter": "^7.0.0",
+    "path": "^0.12.7",
+    "protractor": "^7.0.0",
+    "protractor-html-reporter-2": "^1.0.4"
+  }
+}
