@@ -74,7 +74,7 @@ To run tests sequentially on headless mode
 ```
 npm run e2e -- --capabilities.chromeOptions.args="headless"
 ```
-
+![](https://github.com/jeeshan12/ECommerceAutomation/blob/main/framework_screenshots/SequentialExecution.png)
 To run tests parallel on headful mode
 ```
 npm run e2e  -- --capabilities.shardTestFiles=true
