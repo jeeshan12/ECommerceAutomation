@@ -5,7 +5,7 @@ const fs = require("fs");
 exports.config = {
   baseUrl: "http://automationpractice.com/index.php",
   allScriptsTimeout: 11000,
-  restartBrowserBetweenTests: true,
+  restartBrowserBetweenTests: false,
   specs: ["./src/tests/**/*-spec.js"],
   capabilities: {
     browserName: "chrome",

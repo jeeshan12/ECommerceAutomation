@@ -1,4 +1,8 @@
-const { browser, element, by } = require("protractor");
+const {
+  browser,
+  element,
+  by
+} = require("protractor");
 const faker = require("faker");
 const LandingPage = require("../pages/landingpage-po");
 const ContactUsPage = require("../pages/contactus-po");
@@ -15,14 +19,14 @@ describe("Order a prouct", () => {
     this.headerComponent = new HeaderComponent();
     this.authPage = new AuthenticatePage();
     this.productPage = new ProductPage();
-    this.orderProductPage= new OrderProductPage();
+    this.orderProductPage = new OrderProductPage();
     browser.waitForAngularEnabled(false);
     browser.navigate().to(browser.baseUrl);
   });
   it("S01: Search, add and order product", async () => {
     this.landingPage.searchProduct(searchProductdata.productname);
     expect(
-      (await this.productPage.retriveSearchedProduct()).toLowerCase().replace(/"/g,"").trim()
+      (await this.productPage.retriveSearchedProduct()).toLowerCase().replace(/"/g, "").trim()
     ).toBe(searchProductdata.productname.toLowerCase().trim());
     this.productPage.clickProudctFromTiles(0);
     expect(this.productPage.retreiveAddToCartMessage()).toBe(searchProductdata.addtocartmessage);
@@ -41,5 +45,6 @@ describe("Order a prouct", () => {
     this.orderProductPage.getPaymentComponentReference().clickPayByCheckLink();
     this.orderProductPage.getPaymentComponentReference().clickConfirmMyOrder();
     expect(this.orderProductPage.getPaymentComponentReference().retreiveOrderSuccessMessage()).toBe(searchProductdata.successmessage);
+    this.landingPage.getSignInTab().clickLogoutLink();
   });
 });
