@@ -23,6 +23,7 @@ Please install below tools to use this project
 * [Docker](https://www.docker.com/) : **If you need to run tests on Dockerised container , you will be needing Docker needs to be installed on the system you are executing the tests**.
 * [VisualStudio](https://code.visualstudio.com/download) **(optional)** : **This tool is completely optional. You can use terminal as well to run the automated tests**.
 * [Chrome]() : **Lastest version of chrome browser installed on the machine you are going to execute the tests. If chrome is already installed , please make sure that you have updated version of chrome. You can check this by going to Help -> About Google Chrome in the browser.**
+* [Parallel Execution]() - I would prefer to do the parallel execution in case if you are executing more than one spec. Otherwise certain time if you executing different tests on same browser, some data might cache and you will end up having some issues with test. Parallel tests will assign tests to separate thread id and does the execution for us. Even if you want to execute a single test please put f before describe block like  `fdescribe`.
 
 ## Framework
 Below libraries are used to automate the web browsers
@@ -30,7 +31,7 @@ Below libraries are used to automate the web browsers
 * [Jasmine](https://jasmine.github.io/) - Jasmine is a behavior-driven development framework for testing JavaScript code. It does not depend on any other JavaScript frameworks. It does not require a DOM. And it has a clean, obvious syntax so that you can easily write tests..
 * [Faker](https://www.npmjs.com/package/faker) - a library to generate random data
 * [Docker](https://www.docker.com/) - Docker is a tool designed to make it easier to create, deploy, and run applications by using containers. Docker is used to containerize the automated tests in our case
-* [Parallel Execution]() - I would prefer to do the parallel execution in case if you are executing more than one spec. Otherwise certain time if you executing different tests on same browser, some data might cache and you will end up having some issues with test. Parallel tests will assign tests to separate thread id and does the execution for us. Even if you want to execute a single test please put f before descibe block like  `fdescribe`.
+
 
 ## Clone Project
 Clone the project by running below command in terminal
