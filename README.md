@@ -35,7 +35,7 @@ Below libraries are used to automate the web browsers
 ## Clone Project
 Clone the project by running below command in terminal
 ```
-git clone https://github.com/jeeshan12/springboot-updatepassword.git
+git clone https://github.com/jeeshan12/ECommerceAutomation.git
 ```
 ### Install dependencies
 Open the terminal in the root project and run the below task
